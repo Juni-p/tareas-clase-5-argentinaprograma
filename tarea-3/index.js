@@ -1,27 +1,27 @@
 const $calcularTiempo = document.querySelector("#calcular");
 
 $calcularTiempo.onclick = function () {
-  const segundos = document.querySelectorAll(".segundos");
-  let segundosTotales = 0;
-  for (let i = 0; i < segundos.length; i++) {
-    segundosTotales += Number(segundos[i].value);
+  const segundosVideoNodeList = document.querySelectorAll(".segundos");
+  let segundosVideosTotales = 0;
+  for (let i = 0; i < segundosVideoNodeList.length; i++) {
+    segundosVideosTotales += Number(segundosVideoNodeList[i].value);
   }
-  const minutosEnBaseASegundos = Math.floor(segundosTotales / 60);
-  const segundosRestantes = segundosTotales % 60;
+  const minutosVideosEnBaseASegundos = Math.floor(segundosVideosTotales / 60);
+  const segundosVideosRestantes = segundosVideosTotales % 60;
 
-  const minutos = document.querySelectorAll(".minutos");
-  let minutosTotales = 0;
-  for (let i = 0; i < minutos.length; i++) {
-    minutosTotales += Number(minutos[i].value);
-    console.log(minutosTotales);
+  const minutosVideoNodeList = document.querySelectorAll(".minutos");
+  let minutosVideosTotales = 0;
+  for (let i = 0; i < minutosVideoNodeList.length; i++) {
+    minutosVideosTotales += Number(minutosVideoNodeList[i].value);
+    console.log(minutosVideosTotales);
   }
-  const horasEnBaseAMinutos = Math.floor(minutosTotales / 60);
-  const minutosRestantes = (minutosTotales % 60) + minutosEnBaseASegundos;
+  const horasVideosEnBaseAMinutos = Math.floor(minutosVideosTotales / 60);
+  const minutosVideosRestantes = (minutosVideosTotales % 60) + minutosVideosEnBaseASegundos;
 
-  const horas = document.querySelectorAll(".horas");
-  let horasTotales = horasEnBaseAMinutos;
-  for (let i = 0; i < horas.length; i++) {
-    horasTotales += Number(horas[i].value);
+  const horasVideoNodeList = document.querySelectorAll(".horas");
+  let horasVideosTotales = horasVideosEnBaseAMinutos;
+  for (let i = 0; i < horasVideoNodeList.length; i++) {
+    horasVideosTotales += Number(horasVideoNodeList[i].value);
   }
 
   document.querySelector(
