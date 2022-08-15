@@ -41,7 +41,9 @@ function encontrarNumeroMasRepetido(array) {
 }
 
 $calcular.onclick = function () {
-  const numerosNodeList = document.querySelectorAll(".numeros");
+  const numerosNodeList = document.querySelectorAll(
+    "#lista-numeros > li > input"
+  );
   const numerosArray = [];
   for (let i = 0; i < numerosNodeList.length; i++) {
     numerosArray.push(Number(numerosNodeList[i].value));
