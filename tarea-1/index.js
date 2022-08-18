@@ -14,4 +14,7 @@ function validarSalario(salario) {
   if (salario === 0) {
     return "Este campo debe tener al menos un digito";
   }
+  if (salario.toString().length >= 20) {
+    return "Este campo debe tener menos de 20 digitos";
+  }
 }
