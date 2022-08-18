@@ -1,21 +1,30 @@
 const $calcular = document.querySelector("#calcular");
 
-function calcularPromedio(array) {
+function calcularPromedio(numeros) {
   let sumaTotal = 0;
-  for (let i = 0; i < array.length; i++) {
-    sumaTotal += array[i];
+  for (let i = 0; i < numeros.length; i++) {
+    sumaTotal += numeros[i];
   }
-  let promedio = (sumaTotal / array.length).toFixed(2);
-  return promedio;
+  return (sumaTotal / numeros.length).toFixed(2);
 }
 
-function encontrarNumeroMinimo(array) {
-  let numeroMinimo = Math.min(...array);
+function encontrarNumeroMinimo(numeros) {
+  let numeroMinimo = numeros[0];
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeroMinimo > numeros[i]) {
+      numeroMinimo = numeros[i];
+    }
+  }
   return numeroMinimo;
 }
 
-function encontrarNumeroMaximo(array) {
-  let numeroMaximo = Math.max(...array);
+function encontrarNumeroMaximo(numeros) {
+  let numeroMaximo = numeros[0];
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeroMaximo < numeros[i]) {
+      numeroMaximo = numeros[i];
+    }
+  }
   return numeroMaximo;
 }
 
@@ -40,14 +49,19 @@ function encontrarNumeroMasRepetido(array) {
   return numeroMasRepetido;
 }
 
+function insertarNumerosEnUnArray(array, array1) {
+  for (let i = 0; i < array.length; i++) {
+    array1.push(Number(array[i].value));
+  }
+}
+
 $calcular.onclick = function () {
   const numerosNodeList = document.querySelectorAll(
     "#lista-numeros > li > input"
   );
   const numerosArray = [];
-  for (let i = 0; i < numerosNodeList.length; i++) {
-    numerosArray.push(Number(numerosNodeList[i].value));
-  }
+
+  insertarNumerosEnUnArray(numerosNodeList, numerosArray);
 
   document.querySelector(
     "#promedio"
