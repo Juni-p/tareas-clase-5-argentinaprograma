@@ -49,19 +49,20 @@ function encontrarNumeroMasRepetido(array) {
   return numeroMasRepetido;
 }
 
-function insertarNumerosEnUnArray(array, array1) {
-  for (let i = 0; i < array.length; i++) {
-    array1.push(Number(array[i].value));
+function insertarNumerosEnUnArray(numeros) {
+  const numerosArray = [];
+  for (let i = 0; i < numeros.length; i++) {
+    numerosArray.push(Number(numeros[i].value));
   }
+  return numerosArray;
 }
 
 $calcular.onclick = function () {
   const numerosNodeList = document.querySelectorAll(
     "#lista-numeros > li > input"
   );
-  const numerosArray = [];
 
-  insertarNumerosEnUnArray(numerosNodeList, numerosArray);
+  const numerosArray = insertarNumerosEnUnArray(numerosNodeList);
 
   document.querySelector(
     "#promedio"
