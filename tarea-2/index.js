@@ -15,3 +15,42 @@ $saludarUsuario.onclick = function () {
 
   return false;
 };
+
+function validarPrimerNombre(nombre) {
+  if (nombre.length === 0) {
+    return "Este campo necesita al menos un caracter";
+  }
+
+  if (nombre.length >= 50) {
+    return "Este campo debe tener menos de 50 caracteres";
+  }
+}
+
+function validarSegundoNombre(nombre) {
+  if (nombre.length === 0) {
+    return "Este campo necesita al menos un caracter";
+  }
+
+  if (nombre.length >= 50) {
+    return "Este campo debe tener menos de 50 caracteres";
+  }
+}
+
+function validarApellido(apellido) {
+  if (apellido.length === 0) {
+    return "Este campo necesita al menos un caracter";
+  }
+
+  if (apellido.length >= 50) {
+    return "Este campo debe tener menos de 50 caracteres";
+  }
+}
+
+function validarEdad(edad) {
+  if (edad.toString().length === 0) {
+    return "Este campo necesita al menos un digito";
+  }
+  if (edad.toString().length >= 3) {
+    return "Este campo debe tener menos de 3 digitos";
+  }
+}
