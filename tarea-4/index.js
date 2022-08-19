@@ -84,3 +84,12 @@ $calcular.onclick = function () {
 
   return false;
 };
+
+function validarNumeros(numeros) {
+  if (numeros.toString().length === 0) {
+    return "Este campo debe tener al menos un digito";
+  }
+  if (numeros.toString().length >= 8) {
+    return "Este campo debe tener menos de 8 digitos";
+  }
+}
